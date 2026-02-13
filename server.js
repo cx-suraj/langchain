@@ -1,7 +1,6 @@
 import * as z from "zod";
 import dotenv from "dotenv";
 dotenv.config();
-// npm install @langchain/anthropic to call the model
 import { createAgent, tool } from "langchain";
 
 const getWeather = tool(
@@ -16,7 +15,7 @@ const getWeather = tool(
 );
 
 const agent = createAgent({
-  model: "gpt-4.1-mini",
+  model: "openai:gpt-4.1-mini",
   tools: [getWeather],
   apiKey: process.env.OPENAI_API_KEY,
 });
