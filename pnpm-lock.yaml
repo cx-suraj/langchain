@@ -8,15 +8,24 @@ importers:
 
   .:
     dependencies:
+      '@langchain/core':
+        specifier: ^1.1.24
+        version: 1.1.24(openai@6.22.0(zod@4.3.6))
+      '@langchain/langgraph':
+        specifier: ^1.1.4
+        version: 1.1.4(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))(zod@4.3.6)
       '@langchain/openai':
         specifier: ^1.2.7
-        version: 1.2.7(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))
+        version: 1.2.7(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))
       dotenv:
         specifier: ^17.3.1
         version: 17.3.1
       langchain:
         specifier: ^1.2.24
-        version: 1.2.24(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))(openai@6.21.0(zod@4.3.6))
+        version: 1.2.24(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))(openai@6.22.0(zod@4.3.6))
+      openai:
+        specifier: ^6.22.0
+        version: 6.22.0(zod@4.3.6)
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -136,8 +145,8 @@ packages:
     peerDependencies:
       '@langchain/core': ^1.1.24
 
-  langsmith@0.5.3:
-    resolution: {integrity: sha512-FZqMBKqZxhi5H1YDlCvwryMxAZN+YJfxPVJuERW41XwINMn2T4nT2JB3CWrh1blf+OWmOB3Gqd6O8gYjVVwUGQ==}
+  langsmith@0.5.4:
+    resolution: {integrity: sha512-qYkNIoKpf0ZYt+cYzrDV+XI3FCexApmZmp8EMs3eDTMv0OvrHMLoxJ9IpkeoXJSX24+GPk0/jXjKx2hWerpy9w==}
     peerDependencies:
       '@opentelemetry/api': '*'
       '@opentelemetry/exporter-trace-otlp-proto': '*'
@@ -157,8 +166,8 @@ packages:
     resolution: {integrity: sha512-71ippSywq5Yb7/tVYyGbkBggbU8H3u5Rz56fH60jGFgr8uHwxs+aSKeqmluIVzM0m0kB7xQjKS6qPfd0b2ZoqQ==}
     hasBin: true
 
-  openai@6.21.0:
-    resolution: {integrity: sha512-26dQFi76dB8IiN/WKGQOV+yKKTTlRCxQjoi2WLt0kMcH8pvxVyvfdBDkld5GTl7W1qvBpwVOtFcsqktj3fBRpA==}
+  openai@6.22.0:
+    resolution: {integrity: sha512-7Yvy17F33Bi9RutWbsaYt5hJEEJ/krRPOrwan+f9aCPuMat1WVsb2VNSII5W1EksKT6fF69TG/xj4XzodK3JZw==}
     hasBin: true
     peerDependencies:
       ws: ^8.18.0
@@ -220,14 +229,14 @@ snapshots:
 
   '@cfworker/json-schema@4.1.1': {}
 
-  '@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6))':
+  '@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6))':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       ansi-styles: 5.2.0
       camelcase: 6.3.0
       decamelize: 1.2.0
       js-tiktoken: 1.0.21
-      langsmith: 0.5.3(openai@6.21.0(zod@4.3.6))
+      langsmith: 0.5.4(openai@6.22.0(zod@4.3.6))
       mustache: 4.2.0
       p-queue: 6.6.2
       uuid: 10.0.0
@@ -238,25 +247,25 @@ snapshots:
       - '@opentelemetry/sdk-trace-base'
       - openai
 
-  '@langchain/langgraph-checkpoint@1.0.0(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))':
+  '@langchain/langgraph-checkpoint@1.0.0(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))':
     dependencies:
-      '@langchain/core': 1.1.24(openai@6.21.0(zod@4.3.6))
+      '@langchain/core': 1.1.24(openai@6.22.0(zod@4.3.6))
       uuid: 10.0.0
 
-  '@langchain/langgraph-sdk@1.6.2(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))':
+  '@langchain/langgraph-sdk@1.6.2(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))':
     dependencies:
       '@types/json-schema': 7.0.15
       p-queue: 9.1.0
       p-retry: 7.1.1
       uuid: 13.0.0
     optionalDependencies:
-      '@langchain/core': 1.1.24(openai@6.21.0(zod@4.3.6))
+      '@langchain/core': 1.1.24(openai@6.22.0(zod@4.3.6))
 
-  '@langchain/langgraph@1.1.4(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))(zod@4.3.6)':
+  '@langchain/langgraph@1.1.4(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))(zod@4.3.6)':
     dependencies:
-      '@langchain/core': 1.1.24(openai@6.21.0(zod@4.3.6))
-      '@langchain/langgraph-checkpoint': 1.0.0(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))
-      '@langchain/langgraph-sdk': 1.6.2(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))
+      '@langchain/core': 1.1.24(openai@6.22.0(zod@4.3.6))
+      '@langchain/langgraph-checkpoint': 1.0.0(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))
+      '@langchain/langgraph-sdk': 1.6.2(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))
       '@standard-schema/spec': 1.1.0
       uuid: 10.0.0
       zod: 4.3.6
@@ -264,11 +273,11 @@ snapshots:
       - react
       - react-dom
 
-  '@langchain/openai@1.2.7(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))':
+  '@langchain/openai@1.2.7(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))':
     dependencies:
-      '@langchain/core': 1.1.24(openai@6.21.0(zod@4.3.6))
+      '@langchain/core': 1.1.24(openai@6.22.0(zod@4.3.6))
       js-tiktoken: 1.0.21
-      openai: 6.21.0(zod@4.3.6)
+      openai: 6.22.0(zod@4.3.6)
       zod: 4.3.6
     transitivePeerDependencies:
       - ws
@@ -320,12 +329,12 @@ snapshots:
     dependencies:
       base64-js: 1.5.1
 
-  langchain@1.2.24(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))(openai@6.21.0(zod@4.3.6)):
+  langchain@1.2.24(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))(openai@6.22.0(zod@4.3.6)):
     dependencies:
-      '@langchain/core': 1.1.24(openai@6.21.0(zod@4.3.6))
-      '@langchain/langgraph': 1.1.4(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))(zod@4.3.6)
-      '@langchain/langgraph-checkpoint': 1.0.0(@langchain/core@1.1.24(openai@6.21.0(zod@4.3.6)))
-      langsmith: 0.5.3(openai@6.21.0(zod@4.3.6))
+      '@langchain/core': 1.1.24(openai@6.22.0(zod@4.3.6))
+      '@langchain/langgraph': 1.1.4(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))(zod@4.3.6)
+      '@langchain/langgraph-checkpoint': 1.0.0(@langchain/core@1.1.24(openai@6.22.0(zod@4.3.6)))
+      langsmith: 0.5.4(openai@6.22.0(zod@4.3.6))
       uuid: 10.0.0
       zod: 4.3.6
     transitivePeerDependencies:
@@ -337,7 +346,7 @@ snapshots:
       - react-dom
       - zod-to-json-schema
 
-  langsmith@0.5.3(openai@6.21.0(zod@4.3.6)):
+  langsmith@0.5.4(openai@6.22.0(zod@4.3.6)):
     dependencies:
       '@types/uuid': 10.0.0
       chalk: 4.1.2
@@ -346,11 +355,11 @@ snapshots:
       semver: 7.7.4
       uuid: 10.0.0
     optionalDependencies:
-      openai: 6.21.0(zod@4.3.6)
+      openai: 6.22.0(zod@4.3.6)
 
   mustache@4.2.0: {}
 
-  openai@6.21.0(zod@4.3.6):
+  openai@6.22.0(zod@4.3.6):
     optionalDependencies:
       zod: 4.3.6
 
